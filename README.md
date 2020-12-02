@@ -4,8 +4,13 @@
 - Linkedin: **`linkedin.com/in/keremceliker`**
 - Blog: **`www.keremceliker.com`**
 
+
+
+
   <img src="pics/Kubernetes-Concept.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
 </p>
+
+
 
 **3 x Master Node** ve **3 x veya +N tane Worker Node'a** sahip oldugunu düşünün.
 Burada Worker Node'lar Cluster içerisinde bulunmaktadır. 
