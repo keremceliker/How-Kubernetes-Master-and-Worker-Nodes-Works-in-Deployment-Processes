@@ -103,14 +103,8 @@ X bir kurumda DevOps veya SRE rolünde bir çalışansınız.
 Sizden kubectl cli tool'u kullanarak => Master Node'da bulunan Kubernetes-Api-Server'a yani iletişim merkezine bu Yaml'ı göndermeniz isteniyor. Ne yaparsınız ? 
 
 **Çözüm:** 
-
  <img src="pics/DevOps_01.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
 </p>
-
-```
-*DevOps Person*
-(KubeCtl) :===**.Yaml**==>  (MasterNode) ==> (Api-Server)   
-```
 
 Kube-Api-Server Yaml içinde deklare ettiğimiz ve spesification'ları paylaşmış olduğunuz Resource Type'ını yani POD'u ilgili Worker Node üzerinde ayağa kaldıracaktır. 
 
