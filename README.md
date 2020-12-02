@@ -176,40 +176,24 @@ Daha anlaşılır hali ile belirtmek gerekirse Kubernetes ortamında bir servis 
 
 **Örnek:**
 
-
-**Kind: service 
-
-**Selector: { a:f} 
-
- 
+```
+- Kind: service 
+- Selector: { a:f} 
+```
 
 Şimdi burada Servis'in kullandığımız Deployment'ı da görmesi gerek olacağı için bunun için de Yaml file içinde Service altına da Selector eklemeniz ve kullanmanız gerekmektedir. Selector genellikle 2 tip farklılığı birbiri ile yada farklı bir noktaya set işlemi yapmak için kullanmaktayız. 
 
- 
-
 Yukarıda oluşturduğunuz bir servis Application Frontend deployment'ının ilgili ve sorumlu olduğu ; f:v1 x 3 Pod'larının tamamına ayrılmış bir layer'dan geçirecek ve tanımlamasını da biz servis olarak isimlendireceğiz. 
-
- 
 
 **Örnek:**
 
+  <img src="pics/DevOps_W02.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
+</p>
  
-
-Worker01 ==> f:v1 (Pod)  | Worker02 ==>  f:v1 (Pod) | Worker03 ==> f:v1 (Pod)   
-
-                     Svc-f  ==> Cluster IP (IP'si Cluster IP olan bir servis) 
-
- 
-
 Aynı durumun Backend içinde olduğunu düşünebilirsiniz. Yani backend tipinde bir servis tanımladığınızı düşünebilirsiniz. 
 
- 
-
-                   ==> b:v1 (Pod)  | Worker02 ==>  b:v1 (Pod) | Worker03 ==> b:v1 (Pod)   
-
-                     Svc-b ==> Cluster IP (IP'si Cluster IP olan bir servis) 
-
-               
+  <img src="pics/DevOps_W03.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
+</p>
 
 Son durumda 2 adet Servis'imiz bulunmaktadır. 
 
