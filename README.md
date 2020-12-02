@@ -1,4 +1,4 @@
-# Master ve Worker'lar nasıl iletişim kurar ? 
+# Kubernetes Master ve Worker'lar Deployment Süreçlerinde Nasıl Çalışır ? 
 *Written by Kerem ÇELİKER*
 - Twitter: **`@CloudRss`**
 - Linkedin: **`linkedin.com/in/keremceliker`**
