@@ -103,6 +103,7 @@ X bir kurumda DevOps veya SRE rolünde bir çalışansınız.
 Sizden kubectl cli tool'u kullanarak => Master Node'da bulunan Kubernetes-Api-Server'a yani iletişim merkezine bu Yaml'ı göndermeniz isteniyor. Ne yaparsınız ? 
 
 **Çözüm:** 
+
  <img src="pics/DevOps_01.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
 </p>
 
@@ -116,37 +117,23 @@ Buradaki Pod'un Internal IP'sine diğer worker node'lardan diğer servisler cert
 **2.Sıra geldi Deployment Tipinde bir "Yaml" file oluşturmaya.**
 
  
-
 Deployment yaptığınızda, Kubernetes cluster'ın içerisinde talep etmiş olduğunuz içerikteki desire state'i ayakta tutmaya çalışır.  
-
- 
 
 Kubernetes Desire-State ne demektir ?  
 
- 
-
-Bizim kubernetes'e deklere ettiğimiz ve arzuladığımız durum yada state'in adını tanımladığımız durumdur. 
-
- 
-
-Bu state'e "Deployment" düzenli olarak Pod'larımızın sağlıklı mı yada erişilebilir mi oldugunu kontrol ederek eğer pod'larımız hizmet dışı kaldıysa, direk otomatik yeni bir Pod ayağa kaldırır. 
-
- 
+Bizim kubernetes'e deklere ettiğimiz ve arzuladığımız durum yada state'in adını tanımladığımız durumdur.  Bu state'e "Deployment" düzenli olarak Pod'larımızın sağlıklı mı yada erişilebilir mi oldugunu kontrol ederek eğer pod'larımız hizmet dışı kaldıysa, direk otomatik yeni bir Pod ayağa kaldırır. 
 
 Şimdi bunu hazırlamak için yeni bir yaml oluşturalım bunun adı da **"LearnMeDeployment.yaml"** olsun. 
 
- 
-
 **Örnek:** 
 
- 
+ <img src="pics/4_deployment.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
+</p>
+
 ```
 **Kind:deployment (tipinde bir resource oluşturacağım) 
-
 **Replicas: 3 (Oluşturulacak Resource'dan kaç tane ayakta kalmasını istiyorsun) 
-
 **Template: (Hangi template'i kullanarak ayağa kaldırmak istiyorsun) 
-
 **Selector: {a:f} ( Selector genellikle 2 tip farklılığı birbiri ile yada farklı bir noktaya set işlemi yapmak için kullanmaktayız.) 
 ```
  
