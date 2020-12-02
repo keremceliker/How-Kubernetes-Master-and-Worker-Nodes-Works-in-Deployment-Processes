@@ -111,9 +111,6 @@ Kube-Api-Server burada gerekli tanımlamaları Master Node üzerinde yaptıktan 
  
 Buradaki Pod'un Internal IP'sine diğer worker node'lardan diğer servisler certified SSH bağlantısı ile iletişim kurabilirler. 
 
- 
-
- 
 
 **2.Sıra geldi Deployment Tipinde bir "Yaml" file oluşturmaya.**
 
@@ -236,11 +233,10 @@ Evet, bu işlemi pratik bir yol ile sağlayabilirsiniz. Servisler arasındaki il
 
 Daha anlaşılır hali ile belirtmek gerekirse Kubernetes ortamında bir servis tanımlamak için "Kind" ı Service olan bir Yaml oluşturabilirsiniz. 
 
- 
+ **LearnMeService.yaml"
 
 **Örnek:**
 
- 
 
 **Kind: service 
 
