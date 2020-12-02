@@ -4,8 +4,10 @@
 - Linkedin: **`linkedin.com/in/keremceliker`**
 - Blog: **`www.keremceliker.com`**
 
-**3 x Master Node** ve **3 x veya +N tane Worker Node'a** sahip oldugunu düşünün. 
+  <img src="pics/Kubernetes-Concept.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
+</p>
 
+**3 x Master Node** ve **3 x veya +N tane Worker Node'a** sahip oldugunu düşünün.
 Burada Worker Node'lar Cluster içerisinde bulunmaktadır. 
 
 Master Node'un içerisinde birden fazla components bulunmaktadır. Örneğin **ETCD, kube-scheduler, kube-controller**  vb. bulunuyor. Bunların detayları için aşağıdaki adresi mutlaka ziyaret ederek, teknik prensiplerini öğrenmeniz gerekmektedir. 
@@ -23,11 +25,8 @@ Tüm Worker Node'ların üzerinde by default olarak Kubelet mutlaka bulunmaktad�
 Bu arada Kubelet komponent'ini Master ile iletişimi de sağlayan bir diğer Merkez, component olarak da düşünmeniz oldukça yerinde bir düşünce olacaktır. 
 
 Burada en başta paylaştığım gibi deployment süreç'lerinin nasıl yapıldığı ile bu core kubernetes component'lerin aralarında ki iletişim sürecini nasıl işlettirdiğini bir örnek ile açıklıyor olacağım. 
- 
 
 **Örnek;** 
-
- 
 
 **DevOps ve Developer** ekiplerinizin ayrı-ayrı olarak "Container" haline getirmiş olduğu **FrontEnd ve BackEnd**  Servislerinizin" olduğu ve çalıştığı bir uygulama olduğunu düşünebilirsiniz. 
 
@@ -41,22 +40,14 @@ Peki bu "Yaml" dosyası nedir ?  Bu bir deklerasyon dosyasıdır. Bu deklerasyon
 
 **1.Öncelikle örnek olarak bir basit örnek ile "Yaml" yazarak şimdi FrontEnd-Deploy işlemi yapmayı düşünelim** 
 
- 
-
 **Dosya Adı: learnme.yaml**  => Bu bizim sözünü ettiğim Deklerasyon dosyamız. 
 
                                                     
 LearnMe isimli Yaml dosyası yarattığınızda ilk zamanlar da basit ve kısa bileşenler ile başlar fakat zamanla müşteri ihtiyacınıza yada kurum yapınızın ihtiyaçlarına göre buna eklenen bazı kritik bileşenler de mutlaka olacaktır. 
 
- 
-
 Burada en başta bilmeniz gereken ve en önemli Yaml içerisinde kullanılan başlıca komponent'ler; 
 
- 
-
 **Kind:** ==> Bu Kubernetes Cluster içerisinde kaynak türünün yada Resource Type'ın ne olacağını belirtmek için kullanılır.  
-
- 
 
 **Örnek:** 
 
