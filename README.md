@@ -233,7 +233,7 @@ Evet, bu işlemi pratik bir yol ile sağlayabilirsiniz. Servisler arasındaki il
 
 Daha anlaşılır hali ile belirtmek gerekirse Kubernetes ortamında bir servis tanımlamak için "Kind" ı Service olan bir Yaml oluşturabilirsiniz. 
 
- **LearnMeService.yaml"
+ **LearnMeService.yaml**
 
 **Örnek:**
 
