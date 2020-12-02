@@ -63,6 +63,10 @@ Burada en başta bilmeniz gereken ve en önemli Yaml içerisinde kullanılan ba�
 ```
 **Kind: Pod 
 
+  <img src="pics/1.PNG" alt="Kerem's CloudNative a Sample Code" style="width: 200px;"/>
+</p>
+
+
 ***Image ==> Her Pod by default olarak bir image'den mutlaka kalkması gerekmektedir. Bu yüzden tüm container haline getirmiş olduğumuz uygulamalarımızı Worker Node'lar üzerinde POD larak ayağa kaldırmak istiyorsak, onun üzerinde çalışacağı bir Image'a ihtiyaç duyarız. Mutlaka öncesinde bu Container'ın Image'ının en baştan uygulamanız için sorunsuz ve doğru çalıştığından emin olunması önem taşımaktadır. 
 ```
 
