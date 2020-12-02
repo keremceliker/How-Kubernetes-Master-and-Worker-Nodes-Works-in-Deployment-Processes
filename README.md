@@ -127,18 +127,12 @@ Bizim kubernetes'e deklere ettiğimiz ve arzuladığımız durum yada state'in a
 
 **Örnek:** 
 
- <img src="pics/4_deployment.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
-</p>
-
 ```
-**Kind:deployment (tipinde bir resource oluşturacağım) 
-**Replicas: 3 (Oluşturulacak Resource'dan kaç tane ayakta kalmasını istiyorsun) 
-**Template: (Hangi template'i kullanarak ayağa kaldırmak istiyorsun) 
-**Selector: {a:f} ( Selector genellikle 2 tip farklılığı birbiri ile yada farklı bir noktaya set işlemi yapmak için kullanmaktayız.) 
+- Kind:deployment (tipinde bir resource oluşturacağım) 
+- Replicas: 3 (Oluşturulacak Resource'dan kaç tane ayakta kalmasını istiyorsun) 
+- Template: (Hangi template'i kullanarak ayağa kaldırmak istiyorsun) 
+- Selector: {a:f} ( Selector genellikle 2 tip farklılığı birbiri ile yada farklı bir noktaya set işlemi yapmak için kullanmaktayız.) 
 ```
- 
-
- 
 
 Bu Deployment.yaml'ı biz K8s cluster'ımıza deploy ettiğimiz zaman, Deployment tipin de bir Resource oluşmuş olacak. 
 
