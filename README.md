@@ -130,88 +130,45 @@ Bizim kubernetes'e deklere ettiğimiz ve arzuladığımız durum yada state'in a
 ```
 - Kind:deployment (tipinde bir resource oluşturacağım) 
 - Replicas: 3     (Oluşturulacak Resource'dan kaç tane ayakta kalmasını istiyorsun) 
-- Template:       (Hangi template'i kullanarak ayağa kaldırmak istiyorsun) 
+- Template: ***   (Hangi template'i kullanarak ayağa kaldırmak istiyorsun) 
 - Selector:{a:f} (Selector genellikle 2 tip farklılığı birbiri ile yada farklı bir noktaya set işlemi yapmak için kullanmaktayız.) 
 ```
 
 Bu Deployment.yaml'ı biz K8s cluster'ımıza deploy ettiğimiz zaman, Deployment tipin de bir Resource oluşmuş olacak. 
 
- 
-
 Biraz daha açarsak, Application Frontend tipinde artık bir deployment'ınız var. Bu deployment daha öncesinde artık ölümlü olan Pod'larınızı yani hizmet dışı kalma ihtimali olan pod'larınızı ayakta tutacak desire state'e çekmek için sürekli olarak pod'ları kontrol edecektir. 
 
  
+ <img src="pics/DevOps_W01.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
+</p>
 
-DevOps Person 
-
-(KubeCtl) ===**Yaml.**==>  (Master) ==> (Api-Server)   
-
-                                                                                     |==> a:f x 3  
-
- 
-
-Worker01 ==> f:v1 (Pod)  | Worker02 ==>  f:v1 (Pod) | Worker03 ==> f:v1 (Pod)   
-
- 
-
- 
 
 Eğer yukarıdaki gibi WorkerNodes'larımızın içindeki bir Pod servis dışı kalacak olursa, örnekteki deployment ( a:f x 3) yeni bir pod yaratarak desire state'e (Running-State) yeniden yapıyı ulaştırmış olacaktır. 
 
- 
-
 Şuana kadar yaptığımız Yaml'lar bizim "Frontend-Application'ı" temsil etmektedir ve Bunu hazır etmiş olduk. 
-
- 
-
- 
 
 **3.Şimdi sıra geldi sizden talep edilen diğer "Backend Service" için yaratmaya..**
 
  
 Yukarıdaki örneklerdeki gibi bir deployment'ınızın oldugunu, backend servisimizin container haline getirildiğini ve kubectl aracılığı ile "b:v1" yaml file üzerinden pod ve a:b x 2 deployment tanımladığını düşünün. 
 
- 
-
-Bu sefer backend servisiniz ve backend deployment'ınız kubernetes cluster'ınız içinde desire state de olan 2 adet b:v1 pod oluşturacaktır. 
-
- 
-
-Bu hali ile aynı adımları bu senaryoya göre tanımladığınızda BackEnd-Service içinde POD'larınız ayaklanmış olacaktır. 
-
- 
+Bu sefer backend servisiniz ve backend deployment'ınız kubernetes cluster'ınız içinde desire state de olan 2 adet b:v1 pod oluşturacaktır. Bu hali ile aynı adımları bu senaryoya göre tanımladığınızda BackEnd-Service içinde POD'larınız ayaklanmış olacaktır. 
 
 Şimdi elinizde hem Frontend hemde Backend Service olarak çalışan 2 ayrı POD yapısı bulunmakta ve Running desire-state'de çalışmaktadır.  
 
- 
 
 **Şuan akıldaki soru şu olmalı;** 
 
- 
-
 Bu POD'lar arasında nasıl bir iletişim içinde birbirleri ile haberleşiyorlar. 
-
- 
-
 O zaman Worker'lar içerisinde  bulunan Pod'larımızın ve Servislerimizin yani Backend ve Frontend servisimizin nasıl haberleştiğine bakalım. 
-
- 
 
 Frontend ve Backend Application'larımız Pod olarak hali hazırda artık zaten calısmaktadır. 
 
- 
-
 K8s cluster içerisinde bulunan pod'lar belirli sebeblerden dolayı doğal olarak zaman-zaman hizmet dışı kalabiliyorlar. Eğer bir pod'unuz hizmet dışı kalırsa Deployment yeniden oluşturduğunda Internal Ip'si de değişecektir. Bu durumda Backend Servisi üzerinden ==> Frontend Servisi üzerine istek atılması gerektiği zaman ulaşılması ve iletişim kurulması gerektiğinde (Çoğunlukla böyle olacaktır) Backend Servisiniz, IP adresi değişen Frontend servisine ulaşamayacaktır. 
-
- 
 
 Buradaki fazlasıyla Dynamic bir yapı çalışmaktadır ve şimdi herkesin aklında bunu daha basit haliyle Static'e çekmenin bir yolu var mı ? sorusu mutlaka oluşacaktır.. 
 
- 
-
 Evet, bu işlemi pratik bir yol ile sağlayabilirsiniz. Servisler arasındaki iletişimin kesintiye uğramaması için "Servis Tipinde" bir kaynak tanımlamamız yeterli olacaktır. 
-
- 
 
 Daha anlaşılır hali ile belirtmek gerekirse Kubernetes ortamında bir servis tanımlamak için "Kind" ı Service olan bir Yaml oluşturabilirsiniz. 
 
