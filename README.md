@@ -4,17 +4,17 @@
 - Linkedin: **`linkedin.com/in/keremceliker`**
 - Blog: **`www.keremceliker.com`**
 
-1 x Master Node ve 3 x veya +N tane Worker Node'a sahip oldugunu düşünün. 
+**3 x Master Node** ve **3 x veya +N tane Worker Node'a** sahip oldugunu düşünün. 
 
 Burada Worker Node'lar Cluster içerisinde bulunmaktadır. 
 
-Master Node'un içerisinde birden fazla components bulunmaktadır. Örneğin ETCD, kube-scheduler, kube-controller vb. bulunuyor. Bunların detayları için aşağıdaki adresi mutlaka ziyaret ederek, teknik prensiplerini öğrenmeniz gerekmektedir. 
+Master Node'un içerisinde birden fazla components bulunmaktadır. Örneğin **ETCD, kube-scheduler, kube-controller**  vb. bulunuyor. Bunların detayları için aşağıdaki adresi mutlaka ziyaret ederek, teknik prensiplerini öğrenmeniz gerekmektedir. 
 
 Ben burada Kube-Api-Server component'ini seçerek, hem Kubernetes içerisindeki iletişim mekanizması mantığının hemde deployment süreç'lerinin nasıl yapıldığı ile bu component'lerin süreci nasıl işlettirdiğini biraz daha farklı fakat anlaması akıcı bir yol ile aktarıyor olacağım. 
 
 **Api-Server component'i genel yapısı itibari ile hali hazırda bütün cluster içerisinde bir iletişim merkezi olarak görev almaktadır. En açık tabiri ile Dışarıdan gelen istekleri karşılamakta ve İçerideki Worker Node'lara dağıtmaktadır. 
 
-Master Node içerisinde olduğu gibi, her bir Worker Node'un da içinde farklı component'ler bulunmaktadır. Bunların en önemlisi "Kubelet'dir. 
+Master Node içerisinde olduğu gibi, her bir Worker Node'un da içinde farklı component'ler bulunmaktadır. Bunların en önemlisi **Kubelet**'dir. 
 
 Kubelet komponent'i en açık tabir ile Worker Node üzerinde çalışan Pod'larınızın sağlıklı bir şekilde çalışmasını sağlayan ve tüm Pod'ların da direk sorumlusu olan bir Kubernetes Agent'ıdır. 
 
@@ -23,22 +23,13 @@ Tüm Worker Node'ların üzerinde by default olarak Kubelet mutlaka bulunmaktad�
 Bu arada Kubelet komponent'ini Master ile iletişimi de sağlayan bir diğer Merkez, component olarak da düşünmeniz oldukça yerinde bir düşünce olacaktır. 
 
 Burada en başta paylaştığım gibi deployment süreç'lerinin nasıl yapıldığı ile bu core kubernetes component'lerin aralarında ki iletişim sürecini nasıl işlettirdiğini bir örnek ile açıklıyor olacağım. 
-
- 
-
-============================Yedek Cümle====================================== 
-
-*****Örnek bir Microservices uygulamasının Kubernetes cluster ortamına nasıl deploy edileceğini ve hangi components'leri ve hangi kaynakları, resource'ların ayakta kalacağını aktarıyor olacağım. 
-
-================================================================================== 
-
  
 
 **Örnek;** 
 
  
 
-DevOps ve Developer ekiplerinizin ayrı-ayrı olarak "Container" haline getirmiş olduğu "FrontEnd ve BackEnd Servislerinizin" olduğu ve çalıştığı bir uygulama olduğunu düşünebilirsiniz. 
+**DevOps ve Developer** ekiplerinizin ayrı-ayrı olarak "Container" haline getirmiş olduğu **FrontEnd ve BackEnd**  Servislerinizin" olduğu ve çalıştığı bir uygulama olduğunu düşünebilirsiniz. 
 
 Kubernetes üzerinde yeni bir Resource "Kaynak" oluşturabilmek için "Yaml" dosyalarını kullanırız. 
 
@@ -52,7 +43,7 @@ Peki bu "Yaml" dosyası nedir ?  Bu bir deklerasyon dosyasıdır. Bu deklerasyon
 
  
 
-Dosya Adı: learnme.yaml  => Bu bizim sözünü ettiğim Deklerasyon dosyamız. 
+**Dosya Adı: learnme.yaml**  => Bu bizim sözünü ettiğim Deklerasyon dosyamız. 
 
                                                     
 LearnMe isimli Yaml dosyası yarattığınızda ilk zamanlar da basit ve kısa bileşenler ile başlar fakat zamanla müşteri ihtiyacınıza yada kurum yapınızın ihtiyaçlarına göre buna eklenen bazı kritik bileşenler de mutlaka olacaktır. 
@@ -75,7 +66,7 @@ Burada en başta bilmeniz gereken ve en önemli Yaml içerisinde kullanılan ba�
 ***Image ==> Her Pod by default olarak bir image'den mutlaka kalkması gerekmektedir. Bu yüzden tüm container haline getirmiş olduğumuz uygulamalarımızı Worker Node'lar üzerinde POD larak ayağa kaldırmak istiyorsak, onun üzerinde çalışacağı bir Image'a ihtiyaç duyarız. Mutlaka öncesinde bu Container'ın Image'ının en baştan uygulamanız için sorunsuz ve doğru çalıştığından emin olunması önem taşımaktadır. 
 ```
 
-Örnek:  
+**Örnek:**   
 
 ```
 **Kind: Pod 
@@ -91,7 +82,6 @@ Type'ı POD olan ve Image'ı da FrontEnd version 1 olan Image'ı kullanmak istiy
 
 **Örnek: (Son Hali)**  
 
- 
 ```
 **Kind: Pod 
 
@@ -99,11 +89,9 @@ Type'ı POD olan ve Image'ı da FrontEnd version 1 olan Image'ı kullanmak istiy
 
 ***Label: a:f (Application Frontend etiketini temsil etmektedir) 
 ```
- 
 
 Elimizde şuan artık hazır ve dolu bir Yaml file var. Şimdi bu örneği Deploy nasıl edeceğimize bakalım. 
 
- 
 **Örnek Senaryo:**  
 
 X bir kurumda DevOps rolünde bir çalışansınız. 
@@ -116,7 +104,6 @@ DevOps Person
 
 (KubeCtl) :===**.Yaml**==>  (MasterNode) ==> (Api-Server)   
 
- 
 
 Kube-Api-Server Yaml içinde deklare ettiğimiz ve spesification'ları paylaşmış olduğunuz Resource Type'ını yani POD'u ilgili Worker Node üzerinde ayağa kaldıracaktır. 
 
@@ -148,7 +135,7 @@ Bu state'e "Deployment" düzenli olarak Pod'larımızın sağlıklı mı yada er
 
  
 
-Şimdi bunu hazırlamak için yeni bir yaml oluşturalım bunun adı da "LearnMeDeployment.yaml" olsun. 
+Şimdi bunu hazırlamak için yeni bir yaml oluşturalım bunun adı da **"LearnMeDeployment.yaml"** olsun. 
 
  
 
@@ -219,7 +206,7 @@ Bu hali ile aynı adımları bu senaryoya göre tanımladığınızda BackEnd-Se
 
  
 
-Şuan akıldaki soru şu olmalı; 
+**Şuan akıldaki soru şu olmalı;** 
 
  
 
@@ -289,17 +276,11 @@ Aynı durumun Backend içinde olduğunu düşünebilirsiniz. Yani backend tipind
 
                
 
-  Son durumda 2 adet Servis'imiz bulunmaktadır. 
+Son durumda 2 adet Servis'imiz bulunmaktadır. 
 
- 
 
- 
+Eğer Backend Pod'unuz sizin Frontend Servisinize bir istek atmak isterse **"svc_f"**  kullanarak ilgili pod'lardan herhangi birine erişebilir.Aynı işlemin tersi Frontend içinde geçerli olacaktır **"svc_b"** servis tanımı ile. 
 
- Eğer Backend Pod'unuz sizin Frontend Servisinize bir istek atmak isterse "svc_f" kullanarak ilgili pod'lardan herhangi birine erişebilir.Aynı işlemin tersi Frontend içinde geçerli olacaktır "svc_b" servis tanımı ile. 
-
- 
-
- 
 
 Buradaki Servis yapısı ile daha sağlıklı ve stabil bir haberleşme motud'u kurulmuş olundu. 
 
@@ -331,7 +312,7 @@ Bir cep tel kullanıcısı MobileApps'e erişmek isterse:
 
  
 
-User ==>  type: loadbalancer olan bir servis tipiyle External olan bir IP ile cluster'ın içerisinde yer alan uygulamanıza erişim sağlayacaklardır. 
+**User ==>  type: loadbalancer** olan bir servis tipiyle External olan bir IP ile cluster'ın içerisinde yer alan uygulamanıza erişim sağlayacaklardır. 
 
  
 
