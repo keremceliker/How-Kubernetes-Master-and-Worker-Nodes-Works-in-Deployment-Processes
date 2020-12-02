@@ -1,4 +1,4 @@
-# Kubernetes Master ve Worker'lar Deployment Süreçlerinde Nasıl Çalışır ? 
+# Bölüm 1 - Kubernetes Master ve Worker'lar Deployment Süreçlerinde Nasıl Çalışır ? 
 *Written by Kerem ÇELİKER*
 - Twitter: **`@CloudRss`**
 - Linkedin: **`linkedin.com/in/keremceliker`**
