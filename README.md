@@ -197,96 +197,22 @@ Aynı durumun Backend içinde olduğunu düşünebilirsiniz. Yani backend tipind
 
 Son durumda 2 adet Servis'imiz bulunmaktadır. 
 
-
 Eğer Backend Pod'unuz sizin Frontend Servisinize bir istek atmak isterse **"svc_f"**  kullanarak ilgili pod'lardan herhangi birine erişebilir.Aynı işlemin tersi Frontend içinde geçerli olacaktır **"svc_b"** servis tanımı ile. 
-
 
 Buradaki Servis yapısı ile daha sağlıklı ve stabil bir haberleşme motud'u kurulmuş olundu. 
 
- 
-
- 
-
 **4.Application'a External'dan erişim;**
-
- 
 
 Son olarak ise burada çalışan tüm uygulamalarımıza eğer Cluster dışından, Client'larımız yada Mobil Apps kullanıcılarınnız ulaşmak isterse, cluster içerisinde tanımlamış olduğumuz Internal Ip'ler geçerli olmayacaktır. 
 
- 
-
 Bu durumda sizlerin External IP adresi tanımlamanız gerekmektedir. 
-
- 
 
 External IP'leri tanımlayabilmek için de Mevcut da çalışan Servis tipinizin Load-Balancer yada Node-Port olarak dışarıya açılması Expose edilmesi gerekmektedir. 
 
- 
-
 **Örnek:**
-
- 
 
 Bir cep tel kullanıcısı MobileApps'e erişmek isterse: 
 
- 
-
 **User ==>  type: loadbalancer** olan bir servis tipiyle External olan bir IP ile cluster'ın içerisinde yer alan uygulamanıza erişim sağlayacaklardır. 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
-
- 
 
  
