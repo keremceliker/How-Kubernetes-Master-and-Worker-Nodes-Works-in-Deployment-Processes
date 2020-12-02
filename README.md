@@ -60,7 +60,7 @@ Burada en başta bilmeniz gereken ve en önemli Yaml içerisinde kullanılan ba�
 
 **Örnek:** 
 
-  <img src="pics/1.png" alt="Kerem's CloudNative a Sample Code" style="width: 300px;"/>
+  <img src="pics/1.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
 </p>
 
 ```
