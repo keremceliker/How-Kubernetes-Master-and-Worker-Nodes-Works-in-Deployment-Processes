@@ -79,17 +79,18 @@ Burada en başta bilmeniz gereken ve en önemli Yaml içerisinde kullanılan ba�
 
 Peki yukarıdaki tanımı Türkçe olarak çevirirsek bize ne demek istiyor ? 
 
-Type'ı POD olan ve Image'ı da FrontEnd version 1 olan Image'ı kullanmak istiyorum. 
+Tip'i POD olan ve Image'ı da FrontEnd version 1 olan Image'ı kullanmak istiyorum. 
 
 ***Label: ==>  Bu "Label" bileşenini kaynaklarımıza ve kaynak türlerimizi tanımlamak amaçlı bir etiket gibi düşünebiliriz. POD türündeki Yaml File'ın aynı zamanda bir Label'a sahip olması da önerilmektedir. 
 
 **Örnek: (Son Hali)**  
 
+ <img src="pics/3.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
+</p>
+
 ```
 **Kind: Pod 
-
 **Image: f:v1 
-
 ***Label: a:f (Application Frontend etiketini temsil etmektedir) 
 ```
 
@@ -97,16 +98,19 @@ Elimizde şuan artık hazır ve dolu bir Yaml file var. Şimdi bu örneği Deplo
 
 **Örnek Senaryo:**  
 
-X bir kurumda DevOps rolünde bir çalışansınız. 
+X bir kurumda DevOps veya SRE rolünde bir çalışansınız. 
 
 Sizden kubectl cli tool'u kullanarak => Master Node'da bulunan Kubernetes-Api-Server'a yani iletişim merkezine bu Yaml'ı göndermeniz isteniyor. Ne yaparsınız ? 
 
 **Çözüm:** 
 
-DevOps Person 
+ <img src="pics/DevOps_01.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
+</p>
 
+```
+*DevOps Person*
 (KubeCtl) :===**.Yaml**==>  (MasterNode) ==> (Api-Server)   
-
+```
 
 Kube-Api-Server Yaml içinde deklare ettiğimiz ve spesification'ları paylaşmış olduğunuz Resource Type'ını yani POD'u ilgili Worker Node üzerinde ayağa kaldıracaktır. 
 
