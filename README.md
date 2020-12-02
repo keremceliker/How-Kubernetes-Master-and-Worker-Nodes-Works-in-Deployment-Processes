@@ -190,7 +190,7 @@ Yukarıda oluşturduğunuz bir servis Application Frontend deployment'ının ilg
   <img src="pics/DevOps_W02.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
 </p>
  
-Aynı durumun Backend içinde olduğunu düşünebilirsiniz. Yani backend tipinde bir servis tanımladığınızı düşünebilirsiniz. 
+**Aynı durumun Backend içinde olduğunu düşünebilirsiniz. Yani backend tipinde bir servis tanımladığınızı düşünebilirsiniz.**
 
   <img src="pics/DevOps_W03.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
 </p>
