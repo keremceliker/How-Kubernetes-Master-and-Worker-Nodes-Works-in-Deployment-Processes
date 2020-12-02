@@ -10,9 +10,9 @@ Burada Worker Node'lar Cluster içerisinde bulunmaktadır.
 
 Master Node'un içerisinde birden fazla components bulunmaktadır. Örneğin **ETCD, kube-scheduler, kube-controller**  vb. bulunuyor. Bunların detayları için aşağıdaki adresi mutlaka ziyaret ederek, teknik prensiplerini öğrenmeniz gerekmektedir. 
 
-Ben burada Kube-Api-Server component'ini seçerek, hem Kubernetes içerisindeki iletişim mekanizması mantığının hemde deployment süreç'lerinin nasıl yapıldığı ile bu component'lerin süreci nasıl işlettirdiğini biraz daha farklı fakat anlaması akıcı bir yol ile aktarıyor olacağım. 
+**Ben burada Kube-Api-Server component'ini seçerek, hem Kubernetes içerisindeki iletişim mekanizması mantığının hemde deployment süreç'lerinin nasıl yapıldığı ile bu component'lerin süreci nasıl işlettirdiğini biraz daha farklı fakat anlaması akıcı bir yol ile aktarıyor olacağım.**
 
-**Api-Server component'i genel yapısı itibari ile hali hazırda bütün cluster içerisinde bir iletişim merkezi olarak görev almaktadır. En açık tabiri ile Dışarıdan gelen istekleri karşılamakta ve İçerideki Worker Node'lara dağıtmaktadır. 
+Api-Server component'i genel yapısı itibari ile hali hazırda bütün cluster içerisinde bir iletişim merkezi olarak görev almaktadır. En açık tabiri ile Dışarıdan gelen istekleri karşılamakta ve İçerideki Worker Node'lara dağıtmaktadır. 
 
 Master Node içerisinde olduğu gibi, her bir Worker Node'un da içinde farklı component'ler bulunmaktadır. Bunların en önemlisi **Kubelet**'dir. 
 
