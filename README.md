@@ -63,25 +63,25 @@ Burada en başta bilmeniz gereken ve en önemli Yaml içerisinde kullanılan ba�
   <img src="pics/1.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
 </p>
 
-```
-**Kind: Pod 
 
 ***Image ==> Her Pod by default olarak bir image'den mutlaka kalkması gerekmektedir. Bu yüzden tüm container haline getirmiş olduğumuz uygulamalarımızı Worker Node'lar üzerinde POD larak ayağa kaldırmak istiyorsak, onun üzerinde çalışacağı bir Image'a ihtiyaç duyarız. Mutlaka öncesinde bu Container'ın Image'ının en baştan uygulamanız için sorunsuz ve doğru çalıştığından emin olunması önem taşımaktadır. 
-```
 
-**Örnek:**   
+**Örnek:** 
+
+ <img src="pics/2.png" alt="Kerem's CloudNative a Sample Code" style="width: 500px;"/>
+</p>
+
 
 ```
 **Kind: Pod 
-
 ***Image: f:v1  ( "f" frontend'i ve v1 ise version'u temsil etmektedir) 
+```
 
 Peki yukarıdaki tanımı Türkçe olarak çevirirsek bize ne demek istiyor ? 
 
 Type'ı POD olan ve Image'ı da FrontEnd version 1 olan Image'ı kullanmak istiyorum. 
 
 ***Label: ==>  Bu "Label" bileşenini kaynaklarımıza ve kaynak türlerimizi tanımlamak amaçlı bir etiket gibi düşünebiliriz. POD türündeki Yaml File'ın aynı zamanda bir Label'a sahip olması da önerilmektedir. 
-```
 
 **Örnek: (Son Hali)**  
 
